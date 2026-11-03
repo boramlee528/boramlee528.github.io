@@ -5,7 +5,7 @@ window.PORTFOLIO = {
     name: "RAMI",
     role: "항공 GDS 서비스 기획자",
     // 공개할 이메일을 넣으면 연락처 섹션에 버튼이 나타납니다.
-    email: "",
+    email: "leebr503@naver.com",
   },
 
   hero: {
