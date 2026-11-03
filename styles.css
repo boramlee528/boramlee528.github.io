@@ -75,6 +75,9 @@ h2 { font-size: 16px; font-weight: 700; line-height: 1.6; }
 .project summary:hover .project-title { text-decoration: underline; text-underline-offset: 3px; }
 .period, .area { font-size: 14px; color: var(--muted); line-height: 1.7; }
 .project-title { font-weight: 600; }
+.sample-tag { margin-left: 8px; font-size: 13px; font-weight: 500; color: var(--link); white-space: nowrap; }
+.sample-link { display: inline-block; margin-top: 10px; font-weight: 600; text-decoration: none; }
+.sample-link:hover { text-decoration: underline; }
 .project-result { font-size: 14.5px; margin-top: 1px; }
 .toggle { color: var(--muted); line-height: 1.5; text-align: right; }
 .toggle::before { content: "+"; }
@@ -110,7 +113,7 @@ h2 { font-size: 16px; font-weight: 700; line-height: 1.6; }
 @media print {
   body { font-size: 11pt; }
   .page { width: 100%; padding: 0; }
-  .filter, .role-message, .toggle, #print { display: none; }
+  .filter, .role-message, .toggle, #print, .sample-tag, .sample-link { display: none; }
   a { color: inherit; }
   .project, .ideas li, .row:not(#projects) { break-inside: avoid; }
 }
