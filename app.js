@@ -85,7 +85,10 @@
       el("summary", {}, [
         el("span", { className: "period", textContent: project.period }),
         el("div", { className: "project-main" }, [
-          el("div", { className: "project-title", textContent: project.title }),
+          el("div", { className: "project-title" }, [
+            project.title,
+            ...(project.sample ? [el("span", { className: "sample-tag", textContent: "샘플 화면" })] : []),
+          ]),
           el("p", { className: "project-result", textContent: project.result }),
         ]),
         el("span", { className: "area", textContent: project.area }),
@@ -94,6 +97,9 @@
       el("div", { className: "project-body" }, [
         el("p", { textContent: project.summary }),
         el("dl", { className: "pairs" }, pairs(project.details)),
+        ...(project.sample
+          ? [el("a", { className: "sample-link", href: project.sample, textContent: "샘플 화면 보기 →" })]
+          : []),
       ]),
     ]);
   }
@@ -142,4 +148,11 @@
 
   renderStatic();
   setRole(new URLSearchParams(location.search).get("role"), false);
+
+  // 샘플 화면에서 돌아오면 해당 프로젝트를 펼쳐서 보여 줍니다.
+  const linked = location.hash && document.getElementById(location.hash.slice(1));
+  if (linked && linked.matches("details")) {
+    linked.open = true;
+    linked.scrollIntoView();
+  }
 })();
