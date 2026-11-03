@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자동발권 설정 샘플 화면</title>
+  <meta name="description" content="자동발권 설정 페이지 고도화 기획을 재구성한 샘플 화면">
+  <!-- 검색 결과에 노출되지 않게 합니다. 공개 검색을 원하면 이 줄을 지우세요. -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="bo-ticket.css">
+</head>
+<body>
+  <div class="sample-page">
+    <header class="sample-head">
+      <a class="back" href="../index.html#bo-ticket">← 포트폴리오로 돌아가기</a>
+      <p class="sample-meta" id="meta"></p>
+      <h1 id="title"></h1>
+      <p class="sample-result" id="result"></p>
+      <dl class="story" id="story"></dl>
+    </header>
+
+    <main>
+      <section class="changes" aria-labelledby="changes-title">
+        <h2 id="changes-title">무엇을 바꿨나</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">구분</th><th scope="col">AS-IS</th><th scope="col">TO-BE</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">불가 제어</th>
+                <td>관리자발권 ADT 값으로만 제어</td>
+                <td>운임·여정·좌석·승객·지역·기간 등을 조합하는 제한 설정 신설</td>
+              </tr>
+              <tr>
+                <th scope="row">처리 우선순위</th>
+                <td>우선순위 없음</td>
+                <td>항공사별 설정이 모두 Y면 제한 설정 우선, N이 있으면 항공사별 설정 우선</td>
+              </tr>
+              <tr>
+                <th scope="row">승객 유형 기준</th>
+                <td>ADT 기준, 발권 쿼트 시 적용</td>
+                <td>ADT·CHD·INF 기준, 예약 시점부터 적용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="sample-notice">
+        <b>기획서 v2.5를 재구성한 샘플 화면입니다.</b>
+        실제 시스템 화면이 아니며, 항공사 코드와 규칙은 모두 가상 데이터입니다. 입력 규칙과 Alert 문구는 기획서 기준입니다.
+      </div>
+
+      <div class="console">
+        <div class="console-bar">
+          <b>자동발권 설정</b>
+          <button id="reset" type="button">샘플 초기화</button>
+        </div>
+        <div class="tabs" id="tabs" role="tablist" aria-label="콘솔 메뉴"></div>
+        <div id="panels"></div>
+      </div>
+    </main>
+  </div>
+
+  <noscript><p class="sample-page">이 페이지의 내용을 보려면 JavaScript를 켜 주세요.</p></noscript>
+
+  <script src="../data.js"></script>
+  <script src="bo-ticket.js"></script>
+</body>
+</html>
