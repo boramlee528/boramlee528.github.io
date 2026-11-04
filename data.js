@@ -14,9 +14,9 @@ window.PORTFOLIO = {
   // 공유 링크(#c=코드)로 열거나 PDF 저장 때 코드를 넣으면 풀립니다. 평소에는 빈칸으로 보입니다.
   contactLock: {
     "iter": 150000,
-    "salt": "Vmi5SC1FyGtgFJ8LaCl5hw==",
-    "iv": "ZWEaLtURw8vOPQtd",
-    "data": "fPnqf3cAwX9oPbTUtG2F2tgxpobkv1+ZRg+qTZDaQpSHhX/8GSqH1ZlDjokfmjUnJ5ZCik7OJacGoSqnlljkwHb1kZ6Cc18flMG/cs5KhEr8ED7K0QiKBiQ="
+    "salt": "EHGGKazRKGVyyklUjWpRyw==",
+    "iv": "MuOvzDnJCTsii+Eu",
+    "data": "hcUOxHgxB8JMgVUC+vlP5qjekgF/KRXspGAdfYZP1G1309FRVQ7g3JbC6ZHX2VbvqVoMBW1h+NH6ULZeBD4yx30lmSBhyjGzMudDjXypU9PBmobDrcieCyk="
   },
 
   facts: [
