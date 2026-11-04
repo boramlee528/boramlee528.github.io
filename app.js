@@ -75,6 +75,19 @@
           el("b", { textContent: idea.title }),
           el("div", { textContent: idea.apply }),
           el("span", { textContent: `근거 경험: ${idea.basis} · 측정 지표: ${idea.metric}` }),
+          ...(idea.sample
+            ? [
+                el("div", { className: "idea-sample" }, [
+                  el("p", {}, [el("span", { className: "sample-tag", textContent: "샘플 화면" }), idea.sampleNote || ""]),
+                  el("p", { className: "sample-links" }, [
+                    el("a", { className: "sample-link", href: idea.sample, textContent: "AI 기획 샘플 화면 보기 →" }),
+                    ...(idea.compare
+                      ? [el("a", { className: "sample-link quiet", href: idea.compare, textContent: "기존 기획 샘플과 비교" })]
+                      : []),
+                  ]),
+                ]),
+              ]
+            : []),
         ])
       )
     );

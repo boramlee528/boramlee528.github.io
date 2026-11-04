@@ -3,18 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>자동발권 설정 샘플 화면</title>
-  <meta name="description" content="자동발권 설정 페이지 고도화 기획을 재구성한 샘플 화면">
+  <title>자동발권 샘플 화면</title>
+  <meta name="description" content="자동발권 설정 고도화 기획과, 이를 AI로 확장한 실패 원인 추천 기획을 재구성한 샘플 화면">
   <!-- 검색 결과에 노출되지 않게 합니다. 공개 검색을 원하면 이 줄을 지우세요. -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="bo-ticket.css">
+  <link rel="stylesheet" href="bo-ticket-ai.css">
 </head>
 <body>
   <div class="sample-page">
+    <a class="back" id="back" href="../index.html#bo-ticket">← 포트폴리오로 돌아가기</a>
+
+    <nav class="page-tabs" aria-label="샘플 화면 선택">
+      <a href="#plan" data-view="plan" aria-current="page"><small>기존 기획</small>자동발권 설정 고도화</a>
+      <a href="#ai" data-view="ai"><small>AI 기획 확장</small>자동발권 실패 원인 추천</a>
+    </nav>
+
+    <div id="view-plan">
     <header class="sample-head">
-      <a class="back" href="../index.html#bo-ticket">← 포트폴리오로 돌아가기</a>
       <p class="sample-meta" id="meta"></p>
       <h1 id="title"></h1>
       <p class="sample-result" id="result"></p>
@@ -64,11 +72,15 @@
         <div id="panels"></div>
       </div>
     </main>
+    </div>
+
+    <div id="view-ai" hidden></div>
   </div>
 
   <noscript><p class="sample-page">이 페이지의 내용을 보려면 JavaScript를 켜 주세요.</p></noscript>
 
   <script src="../data.js"></script>
   <script src="bo-ticket.js"></script>
+  <script src="bo-ticket-ai.js"></script>
 </body>
 </html>
