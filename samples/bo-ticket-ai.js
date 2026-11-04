@@ -537,7 +537,7 @@
       if ((a.dataset.view === "ai") === ai) a.setAttribute("aria-current", "page");
       else a.removeAttribute("aria-current");
     });
-    byId("back").href = ai ? "../index.html#ai" : "../index.html#bo-ticket";
+    byId("back").href = ai ? "../index.html#ai-ticket" : "../index.html#bo-ticket";
   }
   window.addEventListener("hashchange", show);
   show();

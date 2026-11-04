@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>항공 GDS 서비스 기획자 포트폴리오</title>
-  <meta name="description" content="항공 예약·발권·결제·환불 흐름을 설계해 온 서비스 기획자의 포트폴리오">
+  <meta name="description" content="항공 예약·발권·운임 실무 13년과 예약관리자·자동발권·API 연동 기획 경험을 담은 서비스 기획자 포트폴리오">
   <!-- 검색 결과에 노출되지 않게 합니다. 공개 검색을 원하면 이 줄을 지우세요. -->
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
@@ -13,25 +13,33 @@
 <body>
   <div class="page">
     <header class="profile">
-      <div class="identity">
-        <h1 id="name"></h1>
-        <p class="role" id="role"></p>
+      <div class="profile-top">
+        <div>
+          <h1 id="name"></h1>
+          <p class="role" id="role"></p>
+        </div>
+        <button class="pdf" id="print" type="button">PDF로 저장</button>
       </div>
-      <p class="contact">
-        <a id="email"></a>
-        <button id="print" type="button">PDF로 저장</button>
-      </p>
+      <p class="headline" id="headline"></p>
+
+      <dl class="contact" id="contact">
+        <div><dt>휴대폰</dt><dd id="phone"></dd></div>
+        <div><dt>이메일</dt><dd id="email"></dd></div>
+      </dl>
+      <form class="unlock" id="unlock" hidden>
+        <label for="unlock-code">연락처 공개 코드</label>
+        <input id="unlock-code" type="password" autocomplete="off" spellcheck="false">
+        <button type="submit">확인 후 PDF 저장</button>
+        <button type="button" id="unlock-cancel" class="quiet">닫기</button>
+        <p class="unlock-msg" id="unlock-msg" aria-live="polite"></p>
+      </form>
+
       <p class="summary" id="summary"></p>
       <dl class="facts" id="facts"></dl>
     </header>
 
     <main>
-      <section class="row" id="career-section" hidden>
-        <h2>경력</h2>
-        <ul class="plain-list" id="career"></ul>
-      </section>
-
-      <section class="row">
+      <section class="sec">
         <h2>핵심 성과</h2>
         <div>
           <ul class="highlights" id="highlights"></ul>
@@ -39,34 +47,38 @@
         </div>
       </section>
 
-      <section class="row" id="projects">
+      <section class="sec">
+        <h2>핵심 역량</h2>
+        <dl class="strengths" id="strengths"></dl>
+      </section>
+
+      <section class="sec">
+        <h2>경력 <small id="career-total"></small></h2>
+        <ol class="career" id="career"></ol>
+      </section>
+
+      <section class="sec" id="projects">
         <h2>프로젝트</h2>
         <div>
-          <div class="filter">
-            <span id="filter-label">직무별 보기</span>
-            <div id="roles" role="group" aria-labelledby="filter-label"></div>
-          </div>
-          <p class="role-message" id="role-message" aria-live="polite"></p>
-          <div id="project-list"></div>
+          <div class="filter" id="filters" role="group" aria-label="프로젝트 분류"></div>
+          <p class="filter-note" id="filter-note" aria-live="polite"></p>
+          <div class="projects" id="project-list"></div>
         </div>
       </section>
 
-      <section class="row">
-        <h2>역량</h2>
-        <dl class="pairs" id="skills"></dl>
-      </section>
-
-      <section class="row" id="education-section" hidden>
+      <section class="sec">
         <h2>학력</h2>
-        <ul class="plain-list" id="education"></ul>
+        <ul class="plain" id="education"></ul>
       </section>
 
-      <section class="row" id="ai">
-        <h2>AI 기획 제안</h2>
-        <div>
-          <p class="note ai-note" id="ai-intro"></p>
-          <ul class="ideas" id="ideas"></ul>
-        </div>
+      <section class="sec">
+        <h2>도구</h2>
+        <ul class="tools" id="tools"></ul>
+      </section>
+
+      <section class="sec">
+        <h2>희망 조건</h2>
+        <dl class="pairs" id="wish"></dl>
       </section>
     </main>
   </div>
