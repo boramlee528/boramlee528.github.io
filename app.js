@@ -77,7 +77,12 @@
       el("div", { className: "project-body" }, [
         el("p", { textContent: p.summary }),
         el("dl", { className: "pairs" }, pairs(p.details)),
-        p.sample ? el("a", { className: "sample-link", href: p.sample, textContent: p.sampleLabel || "샘플 화면 보기 →" }) : null,
+        p.sample || p.aiSample
+          ? el("p", { className: "sample-links" }, [
+              p.sample ? el("a", { className: "sample-link", href: p.sample, textContent: p.sampleLabel || "기획 샘플 화면 →" }) : null,
+              p.aiSample ? el("a", { className: "sample-link ai", href: p.aiSample, textContent: "AI 기획 샘플 화면 →" }) : null,
+            ])
+          : null,
       ]),
     ]);
   }

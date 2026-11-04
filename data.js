@@ -117,6 +117,8 @@ window.PORTFOLIO = {
     {
       id: "api-ancillary",
       area: "연동",
+      sample: "samples/api-ancillary.html#plan",
+      aiSample: "samples/api-ancillary.html#ai",
       title: "Direct API 부가서비스",
       period: "2025",
       summary: "좌석·기내식·수하물 등 부가서비스를 API로 판매·정산",
@@ -129,6 +131,8 @@ window.PORTFOLIO = {
     {
       id: "api-direct",
       area: "연동",
+      sample: "samples/api-direct.html#plan",
+      aiSample: "samples/api-direct.html#ai",
       title: "Direct API 연동",
       period: "2024",
       summary: "여행사·OTA가 직접 호출하는 API 연동과 검수 시나리오",
@@ -148,7 +152,7 @@ window.PORTFOLIO = {
       result: "수동발권 처리를 시스템 자동발권으로 전환, 자동발권율 약 85~90% 수준 달성",
       // 값을 넣으면 프로젝트 상세에 샘플 화면 링크가 나타납니다.
       sample: "samples/bo-ticket.html#plan",
-      sampleLabel: "기획 샘플 화면 보기 →",
+      aiSample: "samples/bo-ticket.html#ai",
       details: [
         ["문제 발견", "OTA마다 자동발권 지원 범위와 설정이 달라 운영이 분산되어 있었습니다."],
         ["정리", "OTA별 지원 현황, 자동발권 불가 설정, 배포·테스트 방법을 한곳에 모아 통합 운영 기준을 만들었습니다."],
@@ -158,6 +162,8 @@ window.PORTFOLIO = {
     {
       id: "bo-maintenance",
       area: "백오피스",
+      sample: "samples/bo-maintenance.html#plan",
+      aiSample: "samples/bo-maintenance.html#ai",
       title: "OTA 서비스 유지보수",
       period: "상시",
       summary: "운영 접수 분석, 기능 개선, 자동 환불 후속 개선",
@@ -171,6 +177,8 @@ window.PORTFOLIO = {
       id: "bo-claims",
       area: "백오피스",
       tags: ["AI 기획"],
+      sample: "samples/bo-claims.html#plan",
+      aiSample: "samples/bo-claims.html#ai",
       title: "OTA 접수 시스템 유지보수·기능개선",
       period: "상시",
       summary: "OTA 접수 건 패턴 분석(금액 불일치 등)과 기능 개선",
@@ -183,6 +191,8 @@ window.PORTFOLIO = {
     {
       id: "fr-cancel",
       area: "프론트",
+      sample: "samples/fr-cancel.html#plan",
+      aiSample: "samples/fr-cancel.html#ai",
       title: "무료취소 가능기간 표기",
       period: "2023.11",
       summary: "항공사별 무료취소 기한을 예약 화면에 노출해 취소 문의·분쟁 예방",
@@ -195,6 +205,8 @@ window.PORTFOLIO = {
     {
       id: "fr-tasf",
       area: "프론트",
+      sample: "samples/fr-tasf.html#plan",
+      aiSample: "samples/fr-tasf.html#ai",
       title: "마이페이지 TASF 카드결제",
       period: "2023.10",
       summary: "발권 수수료(TASF)를 마이페이지에서 카드로 추가 결제",
@@ -207,6 +219,8 @@ window.PORTFOLIO = {
     {
       id: "fr-market",
       area: "프론트",
+      sample: "samples/fr-market.html#plan",
+      aiSample: "samples/fr-market.html#ai",
       title: "오픈마켓 채널 신규 입점",
       period: "2023.06",
       summary: "오픈마켓 채널 신규 입점과 요금·예약 테스트",
@@ -218,6 +232,8 @@ window.PORTFOLIO = {
     {
       id: "fr-calendar",
       area: "프론트",
+      sample: "samples/fr-calendar.html#plan",
+      aiSample: "samples/fr-calendar.html#ai",
       title: "국내선 캘린더 서치",
       period: "2022.08",
       summary: "날짜별 최저가를 한 화면에서 비교하는 검색 UX (PC 2022.08, 모바일 기획 2022.11)",
@@ -230,6 +246,8 @@ window.PORTFOLIO = {
     {
       id: "fr-card",
       area: "프론트",
+      sample: "samples/fr-card.html#plan",
+      aiSample: "samples/fr-card.html#ai",
       title: "카드 청구할인",
       period: "2022.05",
       summary: "카드사 청구할인을 예약·결제 화면에 반영하고 운영 중 수정사항 관리 (v1.2 2024.02)",
@@ -242,6 +260,8 @@ window.PORTFOLIO = {
     {
       id: "bo-intl",
       area: "백오피스",
+      sample: "samples/bo-intl.html#plan",
+      aiSample: "samples/bo-intl.html#ai",
       title: "예약관리자 신규 구축 (해외)",
       period: "2021.11",
       summary: "해외항공 신규 예약관리자(예약·발권·환불 처리, 알림톡)",
@@ -255,6 +275,8 @@ window.PORTFOLIO = {
     {
       id: "bo-domestic",
       area: "백오피스",
+      sample: "samples/bo-domestic.html#plan",
+      aiSample: "samples/bo-domestic.html#ai",
       title: "예약관리자 신규 구축 (국내)",
       period: "2021.07",
       summary: "국내선 전용 관리자 신규 구축(예약카드, 오류 리스트, 청구할인)",

@@ -119,6 +119,8 @@ h2 small { display: block; font-size: 13px; font-weight: 500; color: var(--muted
 .pairs dt { font-weight: 600; }
 .sample-link { display: inline-block; margin-top: 10px; font-weight: 600; text-decoration: none; }
 .sample-link:hover { text-decoration: underline; }
+.sample-links { display: flex; flex-wrap: wrap; gap: 0 20px; }
+.sample-link.ai { color: var(--ink); }
 .empty { padding-block: 14px; color: var(--muted); font-size: 14px; }
 
 .plain li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 16px; }
