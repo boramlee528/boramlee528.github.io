@@ -18,6 +18,7 @@
     byId("role").textContent = role;
     byId("headline").textContent = headline;
     byId("summary").textContent = summary;
+    byId("scope").append(...(data.site.scope || []).map((t) => el("li", { textContent: t })));
 
     byId("facts").append(
       ...data.facts.map(([t, b]) => el("div", {}, [el("dt", { textContent: t }), el("dd", { textContent: b })]))
@@ -49,7 +50,11 @@
         el("li", {}, [el("div", {}, [el("b", { textContent: e.school }), ` · ${e.major}`]), el("span", { textContent: e.period })])
       )
     );
-    byId("tools").append(...data.tools.map((t) => el("li", { textContent: t })));
+    byId("skills").append(
+      ...data.skills.map(([group, items]) =>
+        el("div", {}, [el("dt", { textContent: group }), el("dd", {}, [el("ul", { className: "tools" }, items.map((t) => el("li", { textContent: t })))])])
+      )
+    );
   }
 
   /* ---------- 프로젝트 ---------- */

@@ -35,7 +35,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* 머리말 */
 .profile-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
 h1 { font-size: 30px; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; }
-.role { font-size: 16px; color: var(--muted); margin-top: 2px; }
+.role { font-size: 17px; font-weight: 600; margin-top: 2px; }
+.scope { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.scope li { padding: 2px 10px; background: #f1f4fa; color: #1f3b6e; font-size: 13.5px; font-weight: 600; }
 .pdf { flex: none; min-height: 36px; padding: 6px 14px; border: 1px solid var(--strong-line); font-size: 14px; font-weight: 600; }
 .pdf:hover { background: var(--ink); color: #fff; }
 .headline { margin-top: 20px; font-size: 21px; line-height: 1.45; font-weight: 700; letter-spacing: -.01em; max-width: 34em; }
@@ -122,6 +124,9 @@ h2 small { display: block; font-size: 13px; font-weight: 500; color: var(--muted
 .plain li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 16px; }
 .plain b { font-weight: 700; }
 .plain span { color: var(--muted); font-size: 14.5px; }
+.skills { display: grid; gap: 10px; }
+.skills div { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 4px 12px; align-items: baseline; }
+.skills dt { font-weight: 600; font-size: 14.5px; }
 .tools { display: flex; flex-wrap: wrap; gap: 6px; }
 .tools li { padding: 2px 10px; border: 1px solid var(--line); font-size: 14px; }
 
@@ -130,6 +135,7 @@ h2 small { display: block; font-size: 13px; font-weight: 500; color: var(--muted
   h1 { font-size: 26px; }
   .headline { font-size: 18px; }
   .contact dd { min-width: 120px; }
+  .skills div { grid-template-columns: 1fr; }
   .facts { grid-template-columns: repeat(2, 1fr); }
   .sec { grid-template-columns: 1fr; padding-top: 32px; }
   .highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -149,6 +155,7 @@ h2 small { display: block; font-size: 13px; font-weight: 500; color: var(--muted
   @page { margin: 14mm 12mm; }
   body { font-size: 10.5pt; }
   .page { width: 100%; padding: 0; }
+  .scope li { background: none; border: 1px solid #ccc; }
   .pdf, .unlock, .filter, .filter-note, .toggle, .sample-tag, .sample-link, .note { display: none !important; }
   a { color: inherit; text-decoration: none; }
   .contact dd:empty { border: 0; }
