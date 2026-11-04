@@ -50,7 +50,6 @@
       )
     );
     byId("tools").append(...data.tools.map((t) => el("li", { textContent: t })));
-    byId("wish").append(...pairs(data.wish));
   }
 
   /* ---------- 프로젝트 ---------- */

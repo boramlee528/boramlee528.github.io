@@ -89,13 +89,8 @@ window.PORTFOLIO = {
     { school: "백석예술대학", major: "관광경영과 졸업 · 학점 4.38/4.5", period: "2009.03 – 2011.02" },
   ],
 
-  tools: ["PowerPoint", "Excel", "Figma", "Notion", "Galileo GDS"],
+  tools: ["PowerPoint", "Excel", "Slack", "Notion", "GitHub"],
 
-  wish: [
-    ["희망 직무", "서비스기획 · 콘텐츠기획 · PM/PL"],
-    ["희망 산업", "항공·여행, 커머스(B2B·B2C)"],
-    ["근무 조건", "정규직 · 서울"],
-  ],
 
   // 프로젝트 분류. tags에 같은 이름이 있는 프로젝트도 함께 보입니다.
   filters: [
