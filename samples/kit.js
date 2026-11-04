@@ -1,5 +1,5 @@
 // 프로젝트 샘플 화면 공통 틀입니다.
-// 각 프로젝트 파일(samples/<id>.js)은 Kit.render({ id, plan, ai })만 부르면 됩니다.
+// 각 프로젝트 파일(samples/<id>.js)은 Kit.render({ id, plan, ai })만 부르면 됩니다. ai는 없어도 됩니다.
 // 화면 구성: 기존 기획 / AI 기획 확장 탭 → 머리말 → 무엇을 바꿨나 → 안내 → 콘솔(화면 + 기획 설명)
 (function () {
   function el(tag, props, children) {
@@ -146,15 +146,20 @@
   }
 
   function render(cfg) {
-    const P = ((window.PORTFOLIO && window.PORTFOLIO.projects) || []).find((p) => p.id === cfg.id) || {};
+    const projects = (window.PORTFOLIO && window.PORTFOLIO.projects) || [];
+    const P = projects.find((p) => p.id === cfg.id) || {};
+    // data.js에서 이 샘플의 #ai 화면을 링크한 프로젝트가 있을 때만 AI 기획 화면을 보여 줍니다.
+    const aiPage = `samples/${cfg.id}.html#ai`;
+    const aiProject = projects.find((p) => p.aiSample === aiPage || p.sample === aiPage);
+    if (!aiProject) cfg = { ...cfg, ai: null };
     const app = document.getElementById("app");
     document.title = `${P.title || cfg.plan.name} 샘플 화면`;
     const pageTabs = el("nav", { className: "page-tabs", ariaLabel: "샘플 화면 선택" }, [
       el("a", { href: "#plan" }, [el("small", { textContent: "기존 기획" }), cfg.plan.name]),
-      el("a", { href: "#ai" }, [el("small", { textContent: "AI 기획 확장" }), cfg.ai.name]),
+      cfg.ai ? el("a", { href: "#ai" }, [el("small", { textContent: "AI 기획 확장" }), cfg.ai.name]) : null,
     ]);
     pageTabs.children[0].dataset.view = "plan";
-    pageTabs.children[1].dataset.view = "ai";
+    if (cfg.ai) pageTabs.children[1].dataset.view = "ai";
 
     const viewPlan = el("div", {}, [
       head(`${P.area || ""} · ${P.period || ""}`, P.title || cfg.plan.name, P.result || "", cfg.plan.story || P.details || []),
@@ -167,15 +172,17 @@
     const viewAi = el("div", { hidden: true });
     let aiBuilt = false;
 
+    const back = el("a", { className: "back", href: `../index.html#${cfg.id}`, textContent: "← 포트폴리오로 돌아가기" });
     app.append(
-      el("a", { className: "back", href: `../index.html#${cfg.id}`, textContent: "← 포트폴리오로 돌아가기" }),
-      pageTabs,
+      back,
+      ...(cfg.ai ? [pageTabs] : []),
       viewPlan,
       viewAi
     );
 
     function show() {
-      const ai = location.hash === "#ai";
+      const ai = Boolean(cfg.ai) && location.hash === "#ai";
+      back.href = `../index.html#${ai ? aiProject.id : cfg.id}`;
       if (ai && !aiBuilt) {
         viewAi.append(
           head("AI 기획 확장 · 기존 기획 기반 제안", cfg.ai.name, cfg.ai.result, cfg.ai.story, true),
