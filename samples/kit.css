@@ -48,6 +48,18 @@ tr.on td { background: var(--wash); }
 tr.click { cursor: pointer; }
 tr.click:hover td { background: #fafafa; }
 
+/* 판정 결과와 처리 흐름 */
+.verdict.warn { border-color: #b98900; background: #fbf5e6; }
+.verdict.warn b { color: #8a5a00; }
+.verdict.info { border-color: var(--line); background: var(--wash); }
+.flow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 14px; }
+.flow-row i { color: var(--muted); font-style: normal; }
+.flow-step { padding: 5px 10px; border: 1px solid var(--line); background: #fff; }
+.flow-step.ok { color: var(--pass); border-color: #b9dcc8; background: #eff7f2; }
+.flow-step.stop { color: var(--stop); border-color: #efc6c2; background: #fcf1f0; }
+.gap-top { margin-top: 14px; }
+input[type="number"], input[type="date"] { width: 100%; min-height: 36px; padding: 5px 8px; border: 1px solid #b5b5b5; border-radius: 0; background: #fff; color: var(--ink); font: inherit; font-size: 14.5px; }
+
 /* 고객 화면 틀 */
 .device { max-width: 420px; border: 1px solid var(--strong-line); background: #fff; }
 .device-bar { padding: 8px 12px; background: var(--ink); color: #fff; font-size: 13px; font-weight: 600; }
