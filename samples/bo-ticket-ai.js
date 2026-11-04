@@ -23,7 +23,7 @@
   /* ---------- 가상 데이터 ---------- */
   const ATTEMPTS = 1284;
   const FIRST_OK = 1122;
-  const OTAS = ["하늘길투어", "온에어트립", "트래블메이트", "여행공방", "제휴몰 B2B"];
+  const 여행사S = ["하늘길투어", "온에어트립", "트래블메이트", "여행공방", "제휴몰 B2B"];
   const ROUTES = [["A1", "ICN-NRT"], ["B2", "ICN-BKK"], ["C3", "ICN-FUK"], ["D4", "GMP-KIX"], ["E5", "ICN-DAD"], ["F6", "ICN-SGN"], ["G7", "ICN-MNL"], ["H8", "ICN-HKG"]];
   const ACT = { retry: "재시도", notify: "고객 알림톡", transfer: "수동발권 이관" };
   const STATE = { wait: "대기", run: "재시도 중", ok: "발권 완료", fail: "재시도 실패", notified: "고객 안내 발송", manual: "수동 이관" };
@@ -94,7 +94,7 @@
     for (let i = 0; i < c.n; i++) {
       const route = pick(ROUTES);
       rows.push({
-        id: rows.length, c: c.id, pnr: pnr(), ota: pick(OTAS), air: route[0], route: route[1],
+        id: rows.length, c: c.id, pnr: pnr(), ota: pick(여행사S), air: route[0], route: route[1],
         amt: Math.round((180000 + rnd() * 1270000) / 100) * 100,
         min: c.id === "sys" ? 640 + Math.floor(rnd() * 16) : 540 + Math.floor(rnd() * 330),
         log: pick(c.logs), st: "wait", notified: false,
@@ -208,7 +208,7 @@
       const all = el("input", { type: "checkbox", ariaLabel: "전체 선택", disabled: !selectable.length, checked: selectable.length > 0 && selectable.every((r) => state.sel.has(r.id)) });
       all.addEventListener("change", () => { selectable.forEach((r) => (all.checked ? state.sel.add(r.id) : state.sel.delete(r.id))); renderDetail(); });
       table = el("div", { className: "pnr-wrap" }, [el("table", { className: "pnr-table" }, [
-        el("thead", {}, [el("tr", {}, [el("th", {}, [all]), ...["PNR", "OTA", "항공사·노선", "결제 금액(원)", "실패 시각", "응답 메시지", "상태"].map((h, i) =>
+        el("thead", {}, [el("tr", {}, [el("th", {}, [all]), ...["PNR", "여행사", "항공사·노선", "결제 금액(원)", "실패 시각", "응답 메시지", "상태"].map((h, i) =>
           el("th", { scope: "col", className: i === 3 ? "num" : "", textContent: h }))])]),
         el("tbody", {}, list.map((r) => {
           const cb = el("input", { type: "checkbox", ariaLabel: `${r.pnr} 선택`, checked: state.sel.has(r.id), disabled: !isOpen(r) });
@@ -517,7 +517,7 @@
         ]),
         el("div", { className: "sample-notice" }, [
           el("b", { textContent: "AI 기획 제안을 화면으로 구체화한 샘플입니다." }),
-          " 실제로 구현·운영한 결과가 아니며, 실패 로그·PNR·OTA·효과 수치는 모두 가상 데이터입니다.",
+          " 실제로 구현·운영한 결과가 아니며, 실패 로그·PNR·여행사·효과 수치는 모두 가상 데이터입니다.",
         ]),
         buildConsole(),
       ]),
