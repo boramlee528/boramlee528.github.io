@@ -35,11 +35,11 @@
     byId("career").append(
       ...data.career.map((c) =>
         el("li", {}, [
-          el("p", { className: "when" }, [el("b", { textContent: c.period }), `${c.length} · ${c.job}`]),
+          el("p", { className: "when" }, [el("b", { textContent: c.period }), [c.length, c.job].filter(Boolean).join(" · ")]),
           el("div", {}, [
             el("h3", {}, [c.company, el("span", { textContent: c.title })]),
             el("ul", {}, c.work.map((w) => el("li", { textContent: w }))),
-            el("ul", { className: "results" }, c.results.map((r) => el("li", { textContent: r }))),
+            c.results.length ? el("ul", { className: "results" }, c.results.map((r) => el("li", { textContent: r }))) : null,
           ]),
         ])
       )
